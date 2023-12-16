@@ -272,16 +272,18 @@ var config = {
 };
 
 function generateCSP() {
-    let csp = 'script-src \'self\' cdn.rudderlabs.com/ js.stripe.com/v3';
+    let csp = 'script-src \'self\' blob: cdn.rudderlabs.com/ js.stripe.com/v3';
 
     if (DEV) {
         // react-hot-loader and development source maps require eval
         csp += ' \'unsafe-eval\'';
     }
 
+    // Add worker-src directive
+    csp += '; worker-src \'self\' blob:';
+
     return csp;
 }
-
 async function initializeModuleFederation() {
     function makeSharedModules(packageNames, singleton) {
         const sharedObject = {};

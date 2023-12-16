@@ -25,7 +25,7 @@ const ProductBranding = (): JSX.Element => {
 
     return (
         <ProductBrandingContainer tabIndex={0}>
-            <Icon size={24}/>
+            <div>🇬🇧</div>
             <Heading
                 element='h1'
                 size={200}

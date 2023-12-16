@@ -1,9 +1,11 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
+import Pluggable from 'plugins/pluggable';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
+import {isChannels} from 'utils/products';
 
 import type {ProductIdentifier} from '@mattermost/types/products';
 
@@ -16,12 +18,11 @@ import {
     useShowOnboardingTutorialStep,
 } from 'components/tours/onboarding_tour';
 
-import Pluggable from 'plugins/pluggable';
-import {isChannels} from 'utils/products';
-
 import type {GlobalState} from 'types/store';
 
 import AtMentionsButton from './at_mentions_button/at_mentions_button';
+import MapWidgetButton from './map_widget_button/map_widget_button';
+import NetworkDiagramButtom from './network_diagram_button/network_diagram_button';
 import PlanUpgradeButton from './plan_upgrade_button';
 import SavedPostsButton from './saved_posts_button/saved_posts_button';
 import SettingsButton from './settings_button';
@@ -68,6 +69,8 @@ const RightControls = ({productId = null}: Props): JSX.Element => {
             <PlanUpgradeButton/>
             {isChannels(productId) ? (
                 <>
+                    <NetworkDiagramButtom/>
+                    <MapWidgetButton/>
                     <AtMentionsButton/>
                     <SavedPostsButton/>
                 </>

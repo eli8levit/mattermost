@@ -12,6 +12,12 @@
     width: var(--overrideRhsWidth, 400px);
 }
 
+#sidebar-right {
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
+}
+
 .sidebar--right {
     width: var(--overrideRhsWidth, 400px);
 

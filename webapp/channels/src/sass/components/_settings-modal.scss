@@ -38,6 +38,7 @@
             border: 1px solid rgba(var(--center-channel-color-rgb), 0.16);
             background: var(--center-channel-bg);
             border-radius: 12px;
+            overflow: hidden;
         }
 
         .settings-table {
